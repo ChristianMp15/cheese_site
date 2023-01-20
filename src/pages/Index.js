@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Link, useLoaderData } from "react-router-dom";
 
 function Index(props) {
-    const people = useLoaderData();
+    const cheese = useLoaderData();
     const [image, setImage] = React.useState('');
     return (
         <div>
@@ -24,19 +24,19 @@ function Index(props) {
                         setImage(e.target.value)
                     }}
                 />
-                <input type="input" name="title" placeholder="cheese title" />
+                <input type="input" name="country" placeholder="cheese country" />
 
                 <input type="submit" value="create cheese" />
             </Form>
 
             <h2>Cheese</h2>
-            {people.map((cheese) => (
+            {cheese.map((cheese) => (
                 <div>
                     <Link to={`/${cheese._id}`} className="cheese">
                         <h1>{cheese.name}</h1>
                     </Link>
                     <img src={cheese.image} alt={cheese.name} />
-                    <h3>{cheese.title}</h3>
+                    <h3>{cheese.country}</h3>
                 </div>
             ))}
         </div>

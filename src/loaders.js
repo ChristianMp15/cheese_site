@@ -1,4 +1,4 @@
-const URL = '';
+const URL = "https://cheeseapi.onrender.com";
 
 export const cheeseLoader = async () => {
     const response = await fetch(URL + "/cheese");
